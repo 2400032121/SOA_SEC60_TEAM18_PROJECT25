@@ -1,0 +1,4 @@
+package com.bidvelocity.payment.entity;
+import jakarta.persistence.*; import java.time.LocalDateTime;
+@Entity @Table(name="payments") public class Payment { @Id @GeneratedValue(strategy=GenerationType.IDENTITY) private Long id; private Long auctionId; private Long winnerId; private Double amount; @Enumerated(EnumType.STRING) private PaymentStatus status; private LocalDateTime paymentTime;
+public Payment(){} public Long getId(){return id;} public Long getAuctionId(){return auctionId;} public void setAuctionId(Long v){auctionId=v;} public Long getWinnerId(){return winnerId;} public void setWinnerId(Long v){winnerId=v;} public Double getAmount(){return amount;} public void setAmount(Double v){amount=v;} public PaymentStatus getStatus(){return status;} public void setStatus(PaymentStatus v){status=v;} public LocalDateTime getPaymentTime(){return paymentTime;} public void setPaymentTime(LocalDateTime v){paymentTime=v;} }
